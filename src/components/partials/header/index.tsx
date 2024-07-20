@@ -119,13 +119,16 @@ export const Header = () => {
 							<Button onClick={onClickSignOut}>Sign Out</Button>
 						)
 					) : (
-						<Link
-							href='/auth/sign-in'
-							className={cn(
-								buttonVariants({ variant: "default", size: "sm" })
-							)}>
-							Sign In
-						</Link>
+						<>
+							<Link
+								href='/auth/sign-in'
+								className={cn(
+									buttonVariants({ variant: "default", size: "sm" })
+								)}>
+								Sign In
+							</Link>
+							<p>Testing Github Actions for Coolify.</p>
+						</>
 					)}
 					<MobileNav />
 				</div>
