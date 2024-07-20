@@ -40,15 +40,13 @@ export default function SignUpPage() {
 							Sign In
 						</Link>
 					</div>
-					<Link
-						href={"/"}
-						className={cn("mt-10", buttonVariants({ variant: "link" }))}>
+					<Link href={"/"} className={cn(buttonVariants({ variant: "link" }))}>
 						<ArrowLeftIcon className='mr-2 h-4 w-4' />
 						Back to Home
 					</Link>
 				</div>
 			</div>
-			<div className='hidden bg-muted lg:block'>
+			<div className='hidden h-screen bg-muted lg:block'>
 				<Image
 					src='/signup.svg'
 					alt='Image'

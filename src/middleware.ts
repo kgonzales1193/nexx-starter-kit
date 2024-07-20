@@ -22,13 +22,13 @@ export default middleware((req) => {
 	const isAuthRoute = authRoutes.includes(nextUrl.pathname);
 	const isAdminRoute = adminRoutes.includes(nextUrl.pathname);
 
-	console.log("Pathname:", nextUrl.pathname);
-	console.log("Is API Auth Route:", isApiAuthRoute);
-	console.log("Is Public Route:", isPublicRoute);
-	console.log("Is Auth Route:", isAuthRoute);
-	console.log("Is Admin Route:", isAdminRoute);
-	console.log("Is Logged In:", isLoggedIn);
-	console.log("User Role:", userRole);
+	// console.log("Pathname:", nextUrl.pathname);
+	// console.log("Is API Auth Route:", isApiAuthRoute);
+	// console.log("Is Public Route:", isPublicRoute);
+	// console.log("Is Auth Route:", isAuthRoute);
+	// console.log("Is Admin Route:", isAdminRoute);
+	// console.log("Is Logged In:", isLoggedIn);
+	// console.log("User Role:", userRole);
 
 	if (isApiAuthRoute) {
 		return;

@@ -60,7 +60,6 @@ export default {
 			return baseUrl;
 		},
 		async signIn({ user, account }) {
-			console.log({ account, user });
 			// Allow Oauth without email verification
 			if (account?.provider !== "credentials") return true;
 

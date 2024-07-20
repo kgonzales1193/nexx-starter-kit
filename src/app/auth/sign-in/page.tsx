@@ -44,7 +44,6 @@ export default function SignInPage() {
 					<Link
 						href={"/"}
 						className={cn(
-							"mt-10",
 							buttonVariants({
 								variant: "link",
 							})
@@ -54,7 +53,7 @@ export default function SignInPage() {
 					</Link>
 				</div>
 			</div>
-			<div className='hidden bg-muted lg:block'>
+			<div className='hidden h-screen bg-muted lg:block'>
 				<Image
 					src='/signin.svg'
 					alt='Login illustration'
