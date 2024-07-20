@@ -50,8 +50,8 @@ export const Hero = () => {
 						src='/hero.png'
 						alt='hero'
 						priority
-						height={1024}
-						width={1024}
+						width='1080'
+						height='920'
 						className='hidden lg:flex object-cover rounded-xl drop-shadow-xl'
 					/>
 				</div>

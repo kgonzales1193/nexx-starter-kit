@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
+import Link from "next/link";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -11,7 +11,8 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { MobileNav } from "./MobileNav";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import Bounded from "@/components/Bounded";
-import { marketingConfig } from "@/config/marketing";
+
+import { landingConfig } from "@/config/landing";
 
 export const Header = () => {
 	const { data: session, status } = useSession();
@@ -51,7 +52,7 @@ export const Header = () => {
 					{/* NAVIGATION */}
 					<nav>
 						<ul className='flex space-x-6 capitalize'>
-							{marketingConfig.mainNav.map((item, index) => (
+							{landingConfig.mainNav.map((item, index) => (
 								<li key={index}>
 									<Link href={item.href}>
 										<span
@@ -74,15 +75,22 @@ export const Header = () => {
 					<ModeToggle />
 					{status === "authenticated" ? (
 						session.user.role === "ADMIN" ? (
-							<Link
-								href='/admin/dashboard'
-								className={cn(
-									buttonVariants({ variant: "default", size: "sm" })
-								)}>
-								Dashboard
-							</Link>
+							<div className='flex items-center gap-2'>
+								<Link
+									href='/admin/dashboard'
+									className={cn(
+										buttonVariants({ variant: "link", size: "sm" })
+									)}>
+									Dashboard
+								</Link>
+								<Button onClick={onClickSignOut} variant='secondary' size='sm'>
+									Sign Out
+								</Button>
+							</div>
 						) : (
-							<Button onClick={onClickSignOut}>Sign Out</Button>
+							<Button onClick={onClickSignOut} variant='ghost' size='sm'>
+								Sign Out
+							</Button>
 						)
 					) : (
 						<Link
@@ -98,13 +106,15 @@ export const Header = () => {
 					<ModeToggle />
 					{status === "authenticated" ? (
 						session.user.role === "ADMIN" ? (
-							<Link
-								href='/admin/dashboard'
-								className={cn(
-									buttonVariants({ variant: "default", size: "sm" })
-								)}>
-								Dashboard
-							</Link>
+							<div className='flex items-center gap-2'>
+								<Link
+									href='/admin/dashboard'
+									className={cn(
+										buttonVariants({ variant: "secondary", size: "sm" })
+									)}>
+									Dashboard
+								</Link>
+							</div>
 						) : (
 							<Button onClick={onClickSignOut}>Sign Out</Button>
 						)
